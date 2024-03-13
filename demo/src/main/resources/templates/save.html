@@ -1,0 +1,27 @@
+<!Doctype html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>save</title>
+</head>
+<body>
+<form action = "/board/save" method="post">  <!-- post 방식으로 요청 -->
+    <!-- action: 목적지(서버 주소) / method: HTTP Request Method -->
+
+    <!-- input 태그의 type: 입력받을 데이터의 형식 -->
+    <!-- name: 서버로 전송될 때의 이름. name이 있어야 input값이 name에 담겨서 서버에 전송된다. -->
+
+    writer: <input type="text" name="boardWriter"><br>  <!-- 글 작성자 -->
+    pass: <input type="text" name="boardPass"><br>  <!-- 작성 글 비밀번호 -->
+    title: <input type="text" name="boardTitle"><br>  <!-- 글 제목 -->
+    contents: <textarea name="boardContents" cols="30" rows="10"></textarea><br> <!-- 글 내용 -->
+
+    <!-- value 속성은 input 태그의 초기값 -->
+    <input type="submit" value="글작성"><br>
+</form>
+</body>
+</html>
+
+
+<!--이러한 같은 집합의 input 데이터들을 DTO 클래스에 담아서 컨트롤러에 전달!!-->
+
