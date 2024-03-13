@@ -93,4 +93,9 @@ public class BoardService {
         // Optional 처리해주는 findById 메서드 재사용
         return findByID(boardDTO.getId()); // 해당 게시글의 상세 정보 조회 정보 컨트롤러에 ㅑ넘겨준다
     }
+
+    public void delete(Long id) {
+        boardRepository.deleteById(id);
+
+    }
 }

@@ -4,6 +4,7 @@ import com.example.board.dto.BoardDTO;
 import com.example.board.repository.BoardRepository;
 import com.example.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -74,5 +75,11 @@ public class BoardController {
         return "detail";
 //        return "redirect:/board/" + board.getId(); <- 수정해도 조회수가 증가할 우려가 있어서 사용하지 않았다.
 
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        boardService.delete(id);
+        return "redirect:/board/";
     }
 }
